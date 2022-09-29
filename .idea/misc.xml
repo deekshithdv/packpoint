@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/drawable/border.xml" value="0.233" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/activity_carry_list.xml" value="0.264" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/activity_common_content.xml" value="0.266284523189161" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/activity_display_message.xml" value="0.2" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/activity_item.xml" value="0.5023696682464455" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/activity_leisure_content.xml" value="0.2" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/activity_select_trip.xml" value="0.1" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/card_item.xml" value="0.4" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/header.xml" value="0.4" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DEEKSHITH D V/MyApplication2/app/src/main/res/layout/list_item.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
