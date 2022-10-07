@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.TestLooperManager;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,19 +21,19 @@ public class carryList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carry_list);
-        String[] International = {"Passport", "Visa", "Itinerary", "Ticket"};
-        String[] Formal = {"Formal shirt", "Formal pant", "Formal shoes", "Tie", "Belt" };
-        String[] Working = {"Laptop", "Laptop Charger", "Storage devices"};
-        String[] Dinner = {"Nice shirt", "Nice jacket", "Shoes", "Shoe polish"};
-        String[] Swimming = {"Swimming suit", "Spectacles"};
-        String[] Running = {"Running shoes", "Socks"};
-        String[] Gym = {"Nice shirt", "Nice jacket", "Shoes", "Shoe polish"};
-        String[] Walking = {"Swimming suit", "Spectacles"};
-        String[] Baby = {"Running shoes", "Socks"};
-        String[] Snow = {"Nice shirt", "Nice jacket", "Shoes", "Shoe polish"};
-        String[] Beach = {"Swimming suit", "Spectacles"};
-        String[] Photography = {"Running shoes", "Socks"};
-        String[] Hiking = {"Running shoes", "Socks"};
+        String[] International = {"パスポート", "ビザ", "Itinerary", "チケット"};
+        String[] Formal = {"シャツ", "ズボン", "靴", "靴下", "ネクタイ" };
+        String[] Working = {"パサコン", "チャージャー", "ディスク"};
+        String[] Dinner = {"シャッツ", "ジャケット", "靴", "靴下"};
+        String[] Swimming = {"Swimming suit", "メガネ"};
+        String[] Running = {"靴", "靴下","ボトル", "食べ物"};
+        String[] Gym = {"Gym　Suit", "靴", "靴下", "ボトル"};
+        String[] Walking = {"靴", "メガネ"};
+        String[] Baby = {"食べ物", "飲み物", "パンチーズ", "ボトル"};
+        String[] Snow = {"帽子", "Gloves", "セーター", "ジャケット"};
+        String[] Beach = {"Swimming suit", "メガネ"};
+        String[] Photography = {"カメラ", "チャージャー", "バッテリー", "メモリーカード"};
+        String[] Hiking = {"Stick", "ハイキング靴"};
 
         ListView listView = (ListView) findViewById(R.id.itemlist);
         Bundle extra = getIntent().getExtras();
@@ -46,56 +48,56 @@ public class carryList extends AppCompatActivity {
         ArrayList<Object> list = new ArrayList<>();
         for(int i=0; i<activities.size(); i++){
             switch (activities.get(i)){
-                case "International":
-                    list.add(new String("International"));
+                case "外国":
+                    list.add(new String("外国"));
                     list = funcAddList(list, International);
                     break;
-                case "Working":
-                    list.add(new String("Working"));
+                case "仕事":
+                    list.add(new String("仕事"));
                     list = funcAddList(list, Working);
                     break;
-                case "Dinner":
-                    list.add(new String("Dinner"));
+                case "食事":
+                    list.add(new String("食事"));
                     list = funcAddList(list, Dinner);
                     break;
-                case "Formal":
-                    list.add(new String("Formal"));
+                case "ブシネス":
+                    list.add(new String("ブシネス"));
                     list = funcAddList(list, Formal);
                     break;
-                case "Walking":
-                    list.add(new String("Walking"));
+                case "ウォーキング":
+                    list.add(new String("ウォーキング"));
                     list = funcAddList(list, Walking);
                     break;
-                case "Swimming":
-                    list.add(new String("Swimming"));
+                case "水泳":
+                    list.add(new String("水泳"));
                     list = funcAddList(list, Swimming);
                     break;
-                case "Beach":
-                    list.add(new String("Beach"));
+                case "ビーチ":
+                    list.add(new String("ビーチ"));
                     list = funcAddList(list, Beach);
                     break;
-                case "Running":
-                    list.add(new String("Running"));
+                case "ランニング":
+                    list.add(new String("ビーチ"));
                     list = funcAddList(list, Running);
                     break;
                 case "Baby":
                     list.add(new String("Baby"));
                     list = funcAddList(list, Baby);
                     break;
-                case "Snow":
-                    list.add(new String("Snow"));
+                case "雪":
+                    list.add(new String("雪"));
                     list = funcAddList(list, Snow);
                     break;
-                case "Gym":
-                    list.add(new String("Gym"));
+                case "ジム":
+                    list.add(new String("ジム"));
                     list = funcAddList(list, Gym);
                     break;
-                case "Photography":
-                    list.add(new String("Photography"));
-                    list = funcAddList(list, International);
+                case "写真撮影":
+                    list.add(new String("写真撮影"));
+                    list = funcAddList(list, Photography);
                     break;
-                case "Hiking":
-                    list.add(new String("Hiking"));
+                case "ハイキング":
+                    list.add(new String("ハイキング"));
                     list = funcAddList(list, Hiking);
                     break;
                 default:
@@ -105,6 +107,7 @@ public class carryList extends AppCompatActivity {
 
 
         listView.setAdapter(new childAdapter(this, list));
+        TextView childname = (TextView)findViewById(R.id.childName);
     }
     public ArrayList<Object> funcAddList(ArrayList<Object> arraylist, String[] list){
         for(int i=0; i< list.length; i++) {
@@ -113,4 +116,5 @@ public class carryList extends AppCompatActivity {
         return arraylist;
 
     }
+
 }

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background_2">
 
 
     <CheckBox
@@ -12,9 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="356dp"
-        android:text="Leisure"
+        android:text="レジャー旅行"
         app:layout_constraintStart_toEndOf="@+id/formal"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"/>
 
     <CheckBox
         android:id="@+id/formal"
@@ -22,16 +24,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginTop="356dp"
-        android:text="Business"
+        android:text="出張"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/bsubmit"
         android:layout_width="316dp"
         android:layout_height="52dp"
         android:layout_marginTop="188dp"
-        android:text="Submit"
+        android:text="次へこちら"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/working" />
@@ -41,27 +44,29 @@
         android:layout_width="285dp"
         android:layout_height="41dp"
         android:layout_marginTop="160dp"
-        android:text="More about the trip"
+        android:text="旅行についてこちら入力"
         android:textAlignment="viewStart"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.603"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"/>
 
     <EditText
         android:id="@+id/textView3"
         android:layout_width="287dp"
-        android:layout_height="38dp"
+        android:layout_height="45dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:hint="Enter the destination"
+        android:hint="場所の名前"
         app:layout_constraintBottom_toTopOf="@+id/bsubmit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.612"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.057" />
+        app:layout_constraintVertical_bias="0.057"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/dateset"
@@ -71,18 +76,19 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="76dp"
-        android:text="Date will be set here"
+        android:text="日付はまだ決まっていないね！"
         app:layout_constraintBottom_toTopOf="@+id/formal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.488" />
+        app:layout_constraintVertical_bias="0.488"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/datepicker"
-        android:layout_width="107dp"
-        android:layout_height="37dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:text="Button"
+        android:text="日付"
         app:layout_constraintBottom_toTopOf="@+id/working"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.358"

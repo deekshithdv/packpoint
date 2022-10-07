@@ -8,8 +8,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="viewStart"
-        android:layout_centerInParent="true"
+
         android:text="Header"
-        android:textSize="40dp" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_margin="10dp" />
 
 </RelativeLayout>

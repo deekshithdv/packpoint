@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".commonContent">
+    tools:context=".commonContent"
+    android:background="@drawable/background">
+
 
     <GridView
         android:id="@+id/idGVactivity"
@@ -12,7 +14,7 @@
         android:layout_height="match_parent"
         android:horizontalSpacing="6dp"
         android:numColumns="2"
-        android:verticalSpacing="6dp"/>
+        android:verticalSpacing="6dp" />
 
         <Button
             android:id="@+id/lastbutton"
@@ -21,5 +23,5 @@
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
-            android:text="Lets start packing"/>
+            android:text="活動を選んでからこちら"/>
 </RelativeLayout>

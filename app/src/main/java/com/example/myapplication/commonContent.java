@@ -38,22 +38,22 @@ public class commonContent extends AppCompatActivity {
         Button finalbutton = (Button) findViewById(R.id.lastbutton);
 
         ArrayList<String> cyclingList = new ArrayList<String>(Arrays.asList("Helmet", "Water bottle", "Cyclng suit"));
-        activityModelArrayList.add(new ActivityModel("Dinner", R.drawable.ic_gfglogo));
-        activityModelArrayList.add(new ActivityModel("International", R.drawable.ic_gfglogo));
-        activityModelArrayList.add(new ActivityModel("Working", R.drawable.ic_gfglogo));
+        activityModelArrayList.add(new ActivityModel("食事", R.drawable.img_1));
+        activityModelArrayList.add(new ActivityModel("外国", R.drawable.img_2));
+        activityModelArrayList.add(new ActivityModel("仕事", R.drawable.img_3));
            if (selected.contains("business")) {
-            activityModelArrayList.add(new ActivityModel("Formal", R.drawable.ic_gfglogo));
+            activityModelArrayList.add(new ActivityModel("ブシネス", R.drawable.img_4));
         }
            if (selected.contains("leisure")) {
-               activityModelArrayList.add(new ActivityModel("Gym", R.drawable.ic_gfglogo));
-               activityModelArrayList.add(new ActivityModel("Swimming", R.drawable.ic_gfglogo));
-               activityModelArrayList.add(new ActivityModel("Running", R.drawable.ic_gfglogo));
-               activityModelArrayList.add(new ActivityModel("Walking", R.drawable.ic_gfglogo));
-               activityModelArrayList.add(new ActivityModel("Baby", R.drawable.ic_gfglogo));
-               activityModelArrayList.add(new ActivityModel("Snow", R.drawable.ic_gfglogo));
-               activityModelArrayList.add(new ActivityModel("Beach", R.drawable.ic_gfglogo));
-               activityModelArrayList.add(new ActivityModel("Photography", R.drawable.ic_gfglogo));
-               activityModelArrayList.add(new ActivityModel("Hiking", R.drawable.ic_gfglogo));
+               activityModelArrayList.add(new ActivityModel("ジム", R.drawable.img_5));
+               activityModelArrayList.add(new ActivityModel("水泳", R.drawable.img_6));
+               activityModelArrayList.add(new ActivityModel("ランニング", R.drawable.img_7));
+               activityModelArrayList.add(new ActivityModel("ウォーキング", R.drawable.img_8));
+               activityModelArrayList.add(new ActivityModel("Baby", R.drawable.img_12));
+               activityModelArrayList.add(new ActivityModel("雪", R.drawable.img_9));
+               activityModelArrayList.add(new ActivityModel("ビーチ", R.drawable.img_10));
+               activityModelArrayList.add(new ActivityModel("写真撮影", R.drawable.img_11));
+               activityModelArrayList.add(new ActivityModel("ハイキング", R.drawable.img_14));
            }
 
         ActivityGVAdapter adapter = new ActivityGVAdapter(this, activityModelArrayList);
@@ -67,7 +67,7 @@ public class commonContent extends AppCompatActivity {
                 if (!activityModel.isChecked()){
                     activityModel.isChecked(true);
                     activityList.add(activityModel.getActivity_name());
-                    view.setBackgroundColor(Color.BLUE);
+                    view.setBackgroundColor(Color.parseColor("#FFC0CB"));
                 }
                 else{
                     activityModel.isChecked(false);
