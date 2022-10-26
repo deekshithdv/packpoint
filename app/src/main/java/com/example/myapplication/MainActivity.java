@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         Map<String, Object> users = new HashMap<>();
         users.put("name", "abc");
-        users.put("password", "abc123");
         firestore.collection("users").add(users).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
