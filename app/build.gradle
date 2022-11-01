@@ -15,19 +15,19 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    // Make sure signingConfigs is defined before buildTypes.
-    //  signingConfigs {
-    //      release {
-    //         keyAlias 'keystore-android'
-    //         keyPassword 'ibj123'
-    //         storeFile file("gs://packpoint-95e47.appspot.com/keystore-android.jks")
-    //        storePassword 'ibj123'
-    //     }
-    // }
+//     Make sure signingConfigs is defined before buildTypes.
+      signingConfigs {
+          release {
+             keyAlias 'key-release'
+             keyPassword 'ibj123'
+             storeFile file('../signing_config/release.jks')
+            storePassword 'ibj123'
+         }
+     }
     buildTypes {
         release {
             // Use signing config for build type
-            // signingConfig signingConfigs.release
+             signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
