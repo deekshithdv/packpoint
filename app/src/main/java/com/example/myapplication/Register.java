@@ -65,13 +65,14 @@ public class Register extends AppCompatActivity {
             }
 
 
+
+
             firebaseAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(task -> {
                         if (task.isSuccessful()){
                             User user = new User(username, email, password);
                             System.out.println("##########");
                             System.out.println("##########");
-
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(task1 -> {
@@ -81,6 +82,7 @@ public class Register extends AppCompatActivity {
 
                                         if (task1.isSuccessful()){
                                             Toast.makeText(Register.this, "User created", Toast.LENGTH_LONG).show();
+                                            finish();
                                         }
                                         else{
                                             Toast.makeText(Register.this, "Unable to create user", Toast.LENGTH_LONG).show();

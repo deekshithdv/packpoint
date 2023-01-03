@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.UriMatcher;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +18,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -84,7 +88,21 @@ public class commonContent extends AppCompatActivity {
                 intent.putExtra("LIST_ITEMS", activityList);
                 intent.putExtra("Destination", destination);
                 intent.putExtra("Date", date);
+                String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
+                User user = new User(destination, date, activityList);
                 if (!activityList.isEmpty()) {
+                    finish();
+                    FirebaseDatabase.getInstance().getReference("Trips")
+                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push()
+                            .setValue(user).addOnCompleteListener(task1 -> {
+                                if (task1.isSuccessful()){
+                                    Toast.makeText(getApplicationContext(), "Trip created", Toast.LENGTH_LONG).show();
+                                    finish();
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Unable to create trip", Toast.LENGTH_LONG).show();
+                                }
+                            });
                     startActivity(intent);
                 }
                 else{

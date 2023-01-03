@@ -1,99 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/background_2">
-
-
-    <CheckBox
-        android:id="@+id/working"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="356dp"
-        android:text="レジャー旅行"
-        app:layout_constraintStart_toEndOf="@+id/formal"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/black"/>
-
-    <CheckBox
-        android:id="@+id/formal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="356dp"
-        android:text="出張"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/black"/>
-
-    <Button
-        android:id="@+id/bsubmit"
-        android:layout_width="316dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="188dp"
-        android:text="次へこちら"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/working" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="285dp"
-        android:layout_height="41dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
         android:text="旅行についてこちら入力"
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
         android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.603"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:textColor="@color/black"/>
 
     <EditText
         android:id="@+id/textView3"
-        android:layout_width="287dp"
-        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
         android:hint="場所の名前"
-        app:layout_constraintBottom_toTopOf="@+id/bsubmit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.612"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.057"
         android:textColor="@color/black"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/mainRelativeLayout"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recyclerview"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/no_data_found">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="no data found"
+                android:visibility="gone"/>
+            
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp">
 
     <TextView
         android:id="@+id/dateset"
-        android:layout_width="163dp"
-        android:layout_height="38dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/datepicker"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="76dp"
         android:text="日付はまだ決まっていないね！"
-        app:layout_constraintBottom_toTopOf="@+id/formal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.488"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:layout_gravity="left"
+        android:layout_marginEnd="20dp"/>
 
     <Button
         android:id="@+id/datepicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:text="日付"
-        app:layout_constraintBottom_toTopOf="@+id/working"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.358"
-        app:layout_constraintStart_toEndOf="@+id/dateset"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.44" />
+        android:layout_gravity="right"/>
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp">
+    <CheckBox
+        android:id="@+id/working"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="レジャー旅行"
+        android:textColor="@color/black"
+        android:layout_marginEnd="20dp"/>
+    <CheckBox
+        android:id="@+id/formal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="出張"
+        android:textColor="@color/black"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bsubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="次へこちら"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+
+
+
+
+
+</LinearLayout>

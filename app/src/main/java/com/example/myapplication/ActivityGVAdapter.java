@@ -42,7 +42,7 @@ public class ActivityGVAdapter extends ArrayAdapter<ActivityModel> {
         holder.image.setImageResource(activityModel.getImgid());
         return listitemView;
     }
-    static class ViewHolder {
+    public static class ViewHolder {
         TextView imageTitle;
         ImageView image;
     }
