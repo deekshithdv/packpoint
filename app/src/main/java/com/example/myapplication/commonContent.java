@@ -89,12 +89,17 @@ public class commonContent extends AppCompatActivity {
                 intent.putExtra("Destination", destination);
                 intent.putExtra("Date", date);
                 String email = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-                User user = new User(destination, date, activityList);
+
+                String activities = "";
+                for (String f : activityList) {
+                    activities += f +",";
+                }
+                Trip trip = new Trip(destination, date, activities);
                 if (!activityList.isEmpty()) {
                     finish();
                     FirebaseDatabase.getInstance().getReference("Trips")
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push()
-                            .setValue(user).addOnCompleteListener(task1 -> {
+                            .setValue(trip).addOnCompleteListener(task1 -> {
                                 if (task1.isSuccessful()){
                                     Toast.makeText(getApplicationContext(), "Trip created", Toast.LENGTH_LONG).show();
                                     finish();

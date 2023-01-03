@@ -36,12 +36,12 @@ public class selectTrip extends AppCompatActivity implements DatePickerDialog.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_trip);
-        Button submit = (Button)findViewById(R.id.bsubmit);
-        CheckBox business = (CheckBox) findViewById(R.id.formal);
-        CheckBox leisure = (CheckBox) findViewById(R.id.working);
-        EditText editText = (EditText) findViewById(R.id.textView3);
-        TextView date = (TextView)findViewById(R.id.dateset);
-        Button datePicker = (Button) findViewById(R.id.datepicker);
+        Button submit = findViewById(R.id.bsubmit);
+        CheckBox business = findViewById(R.id.formal);
+        CheckBox leisure = findViewById(R.id.working);
+        EditText editText = findViewById(R.id.textView3);
+        TextView date = findViewById(R.id.dateset);
+        Button datePicker = findViewById(R.id.datepicker);
         recyclerView = findViewById(R.id.recyclerview);
         relativeLayout = findViewById(R.id.no_data_found);
         relativeLayout.setVisibility(View.VISIBLE);
